@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senzokuhle Combined School</title>
+    <meta name="description" content="A leading combined primary and high school dedicated to academic excellence from Foundation Phase to FET.">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header with Integrated Logo & Motto -->
+<header>
+    <div class="logo-container">
+        <img src="images/school-logo.jpg" alt="Senzokuhle Combined School Emblem" class="header-logo">
+        <div class="logo-text">
+            <span class="school-name">Senzokuhle Combined School</span>
+            <span class="school-motto">Knowledge is Power, Ulwazi Ngamandla</span>
+        </div>
+    </div>
+    
+    <div class="menu-toggle" id="mobile-menu">☰</div>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#academics">Academics</a></li>
+            <li><a href="#admissions">Admissions</a></li>
+            <li><a href="#uniform">Uniform</a></li>
+            <li><a href="#staff">Staff</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Hero Section with Central Badge -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Senzokuhle Combined School</h1>
+            <p class="motto-banner">"Knowledge is Power, Ulwazi Ngamandla"</p>
+            <p>A public combined school serving the Nyamvubu Village rural suburb of KwaZulu-Natal.</p>
+        </div>
+    </section>
+
+        <!-- Dashboard Stats (3-column grid) -->
+        <section class="dashboard-banner">
+            <div class="stat-card">
+                <h3>500+</h3>
+                <p>Total Learners</p>
+            </div>
+            <div class="stat-card">
+                <h3>43.8%</h3>
+                <p>2025 Matric Pass Rate</p>
+            </div><div class="stat-card">
+            <h3>14</h3>
+            <p>Dedicated Educators</p>
+            </div>
+            <div class="stat-card">
+                <h3>No-Fee</h3>
+                <p>Quintile 2 Institution</p>
+            </div>
+            <div class="stat-card">
+                <h3>1970s</h3>
+                <p>Year Established</p>
+            </div>
+        </section>
+
+        <!-- News and Announcements Section -->
+        <section id="news" class="news-section">
+            <h2>Notice Board</h2>
+            <p class="section-intro">Stay up to date with the latest news, term dates, and important announcements.</p>
+            
+            <div class="news-grid">
+                <!-- Notice 1 -->
+                <div class="news-card">
+                    <div class="news-date">
+                        <span class="day">15</span>
+                        <span class="month">Nov</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Term 4 Examinations Begin</h3>
+                        <p>All learners from Grade 7 to Grade 11 will commence their final examinations. Please ensure timetables are reviewed.</p>
+                        <a href="timetable.html" class="read-more">Read More &rarr;</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">
+                        <span class="day">15</span>
+                        <span class="month">Nov</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>NSC Examinations</h3>
+                        <p>All Grade 12 pupils will commence their final examinations. Please ensure timetables are reviewed in time.</p>
+                        <a href="timetable.html#nsc" class="read-more">Read More &rarr;</a>
+                    </div>
+                </div>
+                
+                <!-- Notice 2 -->
+                <div class="news-card">
+                    <div class="news-date">
+                        <span class="day">28</span>
+                        <span class="month">Oct</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>2027 Admissions Open</h3>
+                        <p>Registration for the 2027 academic year is now officially open. Submit your documentation at the administration office.</p>
+                        <a href="admissions.html" class="read-more">Read More &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5-Year Pass Rate Section -->
+        <section id="pass-rates" class="pass-rate-section">
+            <h2>Academic Excellence</h2>
+            <p class="section-intro">Our Matric pass rate track record over the past five years.</p>
+            
+            <div class="pass-rate-grid">
+                <div class="year-card">
+                    <span class="year-label">2020</span>
+                    <div class="rate-circle">39.1%</div>
+                </div>
+                <div class="year-card">
+                    <span class="year-label">2021</span>
+                    <div class="rate-circle">47.4%</div>
+                </div>
+                <div class="year-card">
+                    <span class="year-label">2022</span>
+                    <div class="rate-circle">35.3%</div>
+                </div>
+                <div class="year-card">
+                    <span class="year-label">2023</span>
+                    <div class="rate-circle">94.1%</div>
+                </div>
+                <div class="year-card">
+                    <span class="year-label">2024</span>
+                    <div class="rate-circle">93.8%</div>
+                </div>
+            </div>
+        </section>
+        <!-- Matric Results Trend Section -->
+        <section id="results" class="results-section">
+            <h2>Matric Results Trend</h2>
+            <p class="section-intro">A proud history of our Grade 12 National Senior Certificate (NSC) pass rates over the last five years.</p>
+            
+            <div class="chart-container">
+                <!-- The canvas element where the chart will be drawn -->
+                <canvas id="matricResultsChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Academics Section -->
+        <section id="academics" class="academics-section">
+            <h2>Academic Phases</h2>
+            <p class="section-intro">A structured educational journey from early childhood development to final matriculation.</p>
+            
+            <div class="phases-grid">
+                <!-- Foundation Phase -->
+                <div class="phase-card">
+                    <div class="phase-header foundation-bg">
+                        <h3>Foundation Phase</h3>
+                        <span>Grades R - 3</span>
+                    </div>
+                    <div class="phase-body">
+                        <p>Focuses on core fundamental skills: Home Language, First Additional Language, Mathematics, and Life Skills. We build a strong base for lifelong learning.</p>
+                    </div>
+                </div>
+
+                <!-- Intermediate Phase -->
+                <div class="phase-card">
+                    <div class="phase-header intermediate-bg">
+                        <h3>Intermediate Phase</h3>
+                        <span>Grades 4 - 6</span>
+                    </div>
+                    <div class="phase-body">
+                        <p>Introduces a broader curriculum including Natural Sciences, Technology, and Social Sciences, helping learners transition into independent study habits.</p>
+                    </div>
+                </div>
+
+                <!-- Senior Phase -->
+                <div class="phase-card">
+                    <div class="phase-header senior-bg">
+                        <h3>Senior Phase</h3>
+                        <span>Grades 7 - 9</span>
+                    </div>
+                    <div class="phase-body">
+                        <p>Prepares students for subject specialization. Adds Economic Management Sciences and Creative Arts to develop critical thinking and problem-solving.</p>
+                    </div>
+                </div>
+
+                <!-- FET Phase -->
+                <div class="phase-card fet-card">
+                    <div class="phase-header fet-bg">
+                        <h3>FET Phase</h3>
+                        <span>Grades 10 - 12</span>
+                    </div>
+                    <div class="phase-body">
+                        <p>The final stretch toward the National Senior Certificate. Students select specialized subjects aligning with their tertiary education and career goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Staff Directory Section -->
+        <section id="staff" class="staff-directory">
+            <h2>Our Leadership & Staff</h2>
+            <p class="section-intro">Meet the dedicated educators guiding our learners from Foundation Phase to Matric.</p>
+            
+            <div class="staff-grid">
+                
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Mr. G.N. Ngobese</h3>
+                    <span class="staff-role">School Principal</span>
+                    <p>Over 15 years of experience in educational leadership and curriculum development.</p>
+                </div>
+
+                
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Mrs. J. Gabuza</h3>
+                    <span class="staff-role">Head of Primary Phase</span>
+                    <p>Specializes in foundation phase literacy and early childhood cognitive development.</p>
+                </div>
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Mr. J. Ngubane</h3>
+                    <span class="staff-role">Head of Intermediate Phase</span>
+                    <p>Specializes in foundational and intermediate mathematics with more than 20 years in preparing learners for matriculation.</p>
+                </div>
+
+                
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Mrs. Mfuphi</h3>
+                    <span class="staff-role">Head of Senior Phase & FET Life Sciences</span>
+                    <p>FET phase life sciences specialist dedicated to preparing students for matriculation.</p>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Mrs. Nene</h3>
+                    <span class="staff-role">FET Geography</span>
+                    <p>FET Phase Geography (Gr 10-12) and Senior Phase Social Sciences (Gr 7-9).</p>
+                </div>
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Mr. Zulu</h3>
+                    <span class="staff-role">Social Sciences</span>
+                    <p>Senior Phase Social Sciences (Gr 7-9).</p>
+                </div>
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Ms. Mtshali</h3>
+                    <span class="staff-role">FET Business Studies, and Senior Phase Economic Management Science (EMS)</span>
+                    <p>Senior Phase Social Sciences (Gr 7-9).</p>
+                </div>
+        
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Miss Mbeje</h3>
+                    <span class="staff-role">Mathematical Literacy</span>
+                    <p>Equips our FET learners (Gr 10-12) with essential, practical mathematical and financial skills.</p>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Ms. Lakhale</h3>
+                    <span class="staff-role">English FAL</span>
+                    <p>Prepares our senior FET learners (Gr 11-12) for their final English First Additional Language exams.</p>
+                </div>
+        
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Mr. Hlongwane</h3>
+                    <span class="staff-role">isiZulu Home Language</span>
+                    <p>Fosters deep linguistic and cultural understanding from the Senior Phase through Matric (Gr 8-12).</p>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Ms. Zuma</h3>
+                    <span class="staff-role">English FAL</span>
+                    <p>Builds strong English communication skills for learners transitioning through Grades 8 to 10.</p>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Ms. Ngubane</h3>
+                    <span class="staff-role">Grade 1 Educator</span>
+                    <p>Foundation Phase specialist, guiding our newest primary learners through their first formal year of schooling.</p>
+                </div>
+                
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Ms. Sithole</h3>
+                    <span class="staff-role">Grade R Educator</span>
+                    <p>Introduces early childhood development and school readiness in a nurturing Grade R environment.</p>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Mr. Zungu</h3>
+                    <span class="staff-role">FET Physical Sciences & Mathematics</span>
+                    <p>Guides our FET learners through intensive science & maths practicals and exam preparation.</p>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-photo placeholder-img"></div>
+                    <h3>Ms. Mthalane</h3>
+                    <span class="staff-role">Learner Support & Psychosocial Counselor</span>
+                    <p>Provides learner guidance, emotional support, and dignity supplies (uniforms & sanitary care), while coordinating directly with community social workers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- School Uniform Section -->
+        <section id="uniform" class="uniform-section">
+            <h2>School Uniform</h2>
+            <p class="section-intro">Our uniform policy cultivates a sense of unity, equality, and discipline among students.</p>
+            
+            <div class="uniform-grid">
+                <!-- Boys Uniform -->
+                <div class="uniform-card boys-uniform">
+                    <div class="uniform-icon">👕</div>
+                    <h3>Boys</h3>
+                    <ul>
+                        <li>Yellow Shirt</li>
+                        <li>Black Pants</li>
+                    </ul>
+                </div>
+                
+                <!-- Girls Uniform -->
+                <div class="uniform-card girls-uniform">
+                    <div class="uniform-icon">👗</div>
+                    <h3>Girls</h3>
+                    <ul>
+                        <li>Yellow Shirt</li>
+                        <li>Maroon Skirt</li>
+                    </ul>
+                </div>
+                
+                <!-- Matriculants -->
+                <div class="uniform-card matric-uniform">
+                    <div class="uniform-icon">🎓</div>
+                    <h3>Matriculants</h3>
+                    <ul>
+                        <li>Standard Phase Uniform</li>
+                        <li>Creamy-Yellow Sweater Jersey</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admissions Section -->
+        <section id="admissions" class="admissions-section">
+            <div class="admissions-content">
+                <h2>Admissions</h2>
+                <p class="section-intro">Registration for the upcoming academic year occurs between April and October. As a Quintile 2 public school, we are a proud no-fee institution.</p>
+                
+                <div class="admissions-grid">
+                    <div class="requirements-box">
+                        <h3>Required Documentation</h3>
+                        <ul>
+                            <li>Learner's Unabridged Birth Certificate</li>
+                            <li>Latest School Report Card</li>
+                            <li>Parents'/Guardians' ID Documents</li>
+                            <li>Proof of Residence</li>
+                        </ul>
+                    </div>
+                    <div class="apply-box">
+                        <h3>How to Apply</h3>
+                        <p>Download our official application form, fill it out completely, and submit it to the administration office along with the required documents.</p>
+                        <a href="#" class="btn-download">Download Application (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <p class="section-intro">Get in touch with our administration office for any inquiries.</p>
+            
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>School Details</h3>
+                    <p><strong>Phone:</strong> 072 981 9021</p>
+                    <p><strong>Email:</strong> senzokuhlecschool@gmail.com</p>
+                    <p><strong>Address:</strong> R622 Greytown Road, Nyamvubu Village, Mooiriver, 3300, KwaZulu-Natal</p>
+                    <div class="map-placeholder">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Onverwag%20Combined%20School,%20Mooiriver&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                        
+                        <input type="hidden" name="access_key" value="5bd2e2c6-d037-4bee-b055-e4738e8752a6">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="General">General Inquiry</option>
+                                <option value="Admissions">Admissions</option>
+                                <option value="Academics">Academics</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Senzokuhle Combined School. All rights reserved.</p>
+            <p><em>&copy; Mncedisi Mzolo&trade;</em></p>
+            <p>Address: R622 Greytown Road, Nyamvubu Village, Mooi River, 3300, KwaZulu-Natal</p>
+        </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

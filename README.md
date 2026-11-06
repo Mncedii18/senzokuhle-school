@@ -41,10 +41,9 @@ combined-school-website/
 ├── scripts/
 │   └── script.js          # Main JavaScript file (smooth scroll, slider, Chart.js logic)
 │
-└── assets/
-    └── images/
-        ├── school-logo.jpg # Official school badge
-        ├── hero-bg.jpg     # Hero banner background photograph
+└── images/
+    └── school-logo.jpg # Official school badge
+    └── hero-bg.jpg     # Hero banner background photograph
         
         
         

@@ -1,0 +1,897 @@
+:root {
+    --school-maroon: #800000;
+    --school-yellow: #FFCB05;
+    --school-black: #1a1a1a;
+    --matric-cream: #FFFDD0;
+    --background-light: #f9f9f9;
+    --white: #ffffff;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+}
+
+body {
+    overflow-x: clip;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+/* Core Main Container */
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 3rem;
+}
+
+/* Ensures Images & Media Never Exceed Screen Width */
+img, iframe, canvas, svg, video {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-section {
+    /* Use a placeholder until you have a real photo of the school */
+    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(128, 0, 0, 0.8)), url('hero-img.jpg') center/cover;
+    height: 70vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(1.8rem, 8vw, 3.5rem);
+    overflow-wrap: anywhere;
+    color: var(--school-yellow);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Logo Container & Motto in Sticky Header */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-logo {
+    height: 48px;
+    width: auto;
+    border-radius: 4px;
+    border: 2px solid var(--school-yellow);
+    object-fit: contain;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.school-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--school-yellow);
+    line-height: 1.1;
+}
+
+.school-motto {
+    font-size: 0.75rem;
+    color: var(--matric-cream);
+    font-style: italic;
+    margin-top: 2px;
+}
+
+/* Hero Badge & Motto Banner */
+.hero-badge {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--school-yellow);
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.motto-banner {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--school-yellow);
+    margin-bottom: 1rem;
+    font-style: italic;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+/* Updated 3-Column Dashboard */
+.dashboard-banner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: var(--school-black); /* Updated from --primary-color */
+    color: var(--white);
+    text-align: center;
+}
+
+/* Added to make the numbers stand out in the school's yellow */
+.dashboard-banner h3 {
+    color: var(--school-yellow);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* News & Announcements Section */
+.news-section {
+    padding: 4rem 2rem;
+    background-color: var(--background-light);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-section h2 {
+    color: var(--school-maroon);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.news-section .section-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 2rem;
+}
+
+/* Flexbox for aligning date badge and text side-by-side */
+.news-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--school-yellow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.news-date {
+    background-color: var(--school-maroon);
+    color: var(--white);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.news-date .day {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.news-date .month {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.25rem;
+}
+
+.news-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-content h3 {
+    color: var(--school-black);
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.news-content p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Pushes the 'Read More' link to the bottom */
+}
+
+.read-more {
+    color: var(--school-maroon);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--school-yellow);
+}
+
+/* 5-Year Pass Rate Section */
+.pass-rate-section {
+    padding: 4rem 2rem;
+    background-color: var(--background-light);
+    text-align: center;
+}
+
+.pass-rate-section h2 {
+    color: var(--school-maroon);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.pass-rate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 2rem auto 0 auto;
+}
+
+.year-card {
+    background-color: var(--white);
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 4px solid var(--school-black);
+}
+
+.year-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.year-label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--school-black);
+    margin-bottom: 1rem;
+}
+
+.rate-circle {
+    width: 90px;
+    height: 90px;
+    background-color: var(--school-maroon);
+    color: var(--school-yellow);
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 4px solid var(--school-yellow);
+}
+
+/* Matric Results Trend Section */
+.results-section {
+    padding: 4rem 2rem;
+    background-color: var(--white);
+    max-width: 1000px; /* Slightly narrower to make the chart easy to read */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.results-section h2 {
+    color: var(--school-maroon);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.chart-container {
+    position: relative;
+    margin: 3rem auto 0;
+    height: 60vh;
+    max-height: 450px;
+    width: 100%;
+    background-color: var(--background-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 3px solid var(--school-yellow);
+}
+
+/* Mobile Responsiveness for the Chart */
+@media (max-width: 768px) {
+    .chart-container {
+        padding: 0.5rem;
+        height: 40vh;
+    }
+}
+
+/* Academics Section */
+.academics-section {
+    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(128, 0, 0, 0.8)), url('academics.jpg') center/cover;
+    padding: 4rem 2rem;
+    background-color: var(--background-light);
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.academics-section h2 {
+    color: var(--school-maroon);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.phase-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phase-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.phase-header {
+    padding: 1.5rem;
+    color: var(--white);
+    text-align: center;
+}
+
+.phase-header h3 {
+    margin-bottom: 0.25rem;
+    font-size: 1.4rem;
+}
+
+.phase-header span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Color-coded Headers */
+.foundation-bg {
+    background-color: var(--school-black);
+}
+
+.intermediate-bg {
+    background-color: #4a0000; /* Darker maroon variant */
+}
+
+.senior-bg {
+    background-color: var(--school-maroon);
+}
+
+.fet-bg {
+    background-color: var(--school-yellow);
+    color: var(--school-black); /* Dark text for yellow background */
+}
+
+.phase-body {
+    padding: 1.5rem;
+    color: #444;
+}
+
+/* Special FET styling using the Matric cream color */
+.fet-card .phase-body {
+    background-color: var(--matric-cream);
+    color: var(--school-black);
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--school-maroon);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--school-yellow);
+}
+
+footer {
+    background-color: var(--school-black);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    border-top: 5px solid var(--school-maroon);
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-content p:last-child {
+    color: var(--school-yellow);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--school-yellow);
+}
+
+/* Mobile Hamburger Menu icon (hidden on desktop) */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--school-yellow);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .dashboard-banner, 
+    .phases-section {
+        grid-template-columns: 1fr;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav ul {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--school-maroon);
+        padding: 1rem 0;
+        text-align: center;
+    }
+    
+    nav ul.active {
+        display: flex; /* Shown when toggled */
+    }
+    
+    nav ul li {
+        margin: 1rem 0;
+    }
+}
+
+/* Staff Directory Section */
+.staff-directory {
+    padding: 4rem 2rem;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.staff-directory h2 {
+    color: var(--school-maroon);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-intro {
+    margin-bottom: 3rem;
+    color: #666;
+}
+
+/* Responsive Grid for Profile Cards */
+.staff-grid {
+    display: grid;
+    /* auto-fit creates as many columns as will fit based on the 280px minimum */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Profile Card */
+.staff-card {
+    background-color: var(--background-light);
+    padding: 2rem;
+    border-radius: 8px;
+    border-top: 5px solid var(--school-maroon);
+    box-shadow: 0 4px 6px rgba(128, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.staff-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Special Matric Accent */
+.staff-card.matric-card {
+    background-color: var(--matric-cream);
+    border-top: 5px solid var(--school-black);
+}
+
+.staff-photo {
+    width: 120px;
+    height: 120px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem auto;
+    border: 3px solid var(--school-yellow);
+}
+
+.staff-card h3 {
+    color: var(--school-black);
+    margin-bottom: 0.25rem;
+}
+
+.staff-role {
+    display: block;
+    color: var(--school-maroon);
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* School Uniform Section */
+.uniform-section {
+    padding: 4rem 2rem;
+    background-color: var(--white);
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.uniform-section h2 {
+    color: var(--school-maroon);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.uniform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.uniform-card {
+    background-color: var(--background-light);
+    padding: 2.5rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 5px solid;
+    transition: transform 0.3s ease;
+}
+
+.uniform-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Color-coded card borders */
+.boys-uniform {
+    border-top-color: var(--school-black);
+}
+
+.girls-uniform {
+    border-top-color: var(--school-maroon);
+}
+
+.matric-uniform {
+    background-color: var(--matric-cream);
+    border-top-color: var(--school-yellow);
+}
+
+.uniform-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.uniform-card h3 {
+    color: var(--school-black);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.uniform-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.uniform-card ul li {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #444;
+}
+
+.matric-uniform ul li {
+    color: var(--school-black);
+}
+
+/* Admissions Section */
+.admissions-section {
+    padding: 4rem 2rem;
+    background-color: var(--school-maroon);
+    color: var(--white);
+}
+
+.admissions-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admissions-section h2 {
+    color: var(--school-yellow);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.admissions-section .section-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--white);
+}
+
+.admissions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 2rem;
+}
+
+.requirements-box, .apply-box {
+    background-color: var(--white);
+    color: var(--school-black);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border-bottom: 5px solid var(--school-yellow);
+}
+
+.requirements-box h3, .apply-box h3 {
+    color: var(--school-maroon);
+    margin-bottom: 1rem;
+}
+
+.requirements-box ul {
+    list-style-type: square;
+    padding-left: 1.5rem;
+}
+
+.requirements-box ul li {
+    margin-bottom: 0.5rem;
+}
+
+.btn-download {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: var(--school-black);
+    color: var(--school-yellow);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: var(--school-maroon);
+    color: var(--white);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 4rem 2rem;
+    background-color: var(--background-light);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-section h2 {
+    color: var(--school-maroon);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.contact-section .section-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    gap: 3rem;
+}
+
+.contact-info {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--school-black);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    margin-top: 1.5rem;
+    border-radius: 4px;
+}
+
+/* Form Styling */
+.contact-form-container {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    border-top: 5px solid var(--school-maroon);
+    box-shadow: 0 4px 6px rgba(160, 19, 19, 0.904);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--school-black);
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--school-maroon);
+    box-shadow: 0 0 5px rgba(128, 0, 0, 0.2);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--school-maroon);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--school-yellow);
+    color: var(--school-black);
+}
+
+/* Timetable Style*/
+/* Article Page Layout */
+.article-container {
+    padding: 4rem 2rem;
+    background-color: var(--background-light);
+    min-height: 60vh;
+}
+
+.news-article {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--school-maroon);
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--school-black);
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--school-yellow);
+}
+
+.news-article h1 {
+    color: var(--school-maroon);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.publish-date {
+    display: block;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.article-body h3 {
+    color: var(--school-black);
+    margin: 2rem 0 1rem 0;
+}
+
+.article-body ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-body li {
+    margin-bottom: 0.5rem;
+}
+
+.download-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
